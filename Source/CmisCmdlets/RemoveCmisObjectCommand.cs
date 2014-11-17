@@ -18,10 +18,12 @@ namespace CmisCmdlets
     [Cmdlet(VerbsCommon.Remove, "CmisObject", DefaultParameterSetName = "ByPath")]
     public class RemoveCmisObjectCommand : CmisCommandBase
     {
-        [Parameter(Position = 0, ValueFromPipeline = true, ParameterSetName = "ByPath")]
+        [Parameter(Position = 0, ValueFromPipeline = true, ParameterSetName = "ByPath",
+                   Mandatory = true)]
         public string[] Path { get; set; }
 
-        [Parameter(Position = 0, ValueFromPipeline = true, ParameterSetName = "ByObject")]
+        [Parameter(Position = 0, ValueFromPipeline = true, ParameterSetName = "ByObject",
+                   Mandatory = true)]
         public ICmisObject[] Object { get; set; }
     
         [Parameter]

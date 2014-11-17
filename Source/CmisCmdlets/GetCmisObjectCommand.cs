@@ -18,7 +18,7 @@ namespace CmisCmdlets
     [Cmdlet(VerbsCommon.Get, "CmisObject")]
     public class GetCmisObjectCommand : CmisCommandBase
     {
-        [Parameter(Position = 0, ValueFromPipeline = true)]
+        [Parameter(Position = 0, ValueFromPipeline = true, Mandatory = true)]
         public string Path { get; set; }
 
         [Parameter(Mandatory = false, Position = 1)]

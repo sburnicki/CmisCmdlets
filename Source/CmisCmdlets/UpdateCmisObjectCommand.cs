@@ -22,12 +22,12 @@ namespace CmisCmdlets
     [Cmdlet(VerbsData.Update, "CmisObject", DefaultParameterSetName = "FromFile")]
     public class UpdateCmisObjectCommand : CmisContentCommandBase
     {
-        [Parameter(Position = 0, ParameterSetName = "FromContent")]
-        [Parameter(Position = 0, ParameterSetName = "FromFile")]
+        [Parameter(Position = 0, ParameterSetName = "FromContent", Mandatory = true)]
+        [Parameter(Position = 0, ParameterSetName = "FromFile", Mandatory = true)]
         public string Path { get; set; }
 
-        [Parameter(Position = 0, ParameterSetName = "FromFileByObject")]
-        [Parameter(Position = 0, ParameterSetName = "FromContentByObject")]
+        [Parameter(Position = 0, ParameterSetName = "FromFileByObject", Mandatory = true)]
+        [Parameter(Position = 0, ParameterSetName = "FromContentByObject", Mandatory = true)]
         public ICmisObject Object { get; set; }
 
         [Parameter(Position = 1, Mandatory = false, ParameterSetName = "FromFile")]

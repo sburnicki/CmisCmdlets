@@ -18,7 +18,7 @@ namespace CmisCmdlets
     [Cmdlet(VerbsCommon.New, "CmisDocument", DefaultParameterSetName = "FromFile")]
     public class NewCmisDocumentCommand : CmisContentCommandBase
     {
-        [Parameter(Position = 0)]
+        [Parameter(Position = 0, Mandatory = true)]
         public string Path { get; set; }
 
         [Parameter(Position = 1, Mandatory = false, ParameterSetName = "FromFile")]
@@ -27,13 +27,13 @@ namespace CmisCmdlets
             set { LocalFileInternal = value; }
         }
 
-        [Parameter(Position = 1, ParameterSetName = "FromContent", ValueFromPipeline = true)]
+        [Parameter(Position = 1, ParameterSetName = "FromContent", ValueFromPipeline = true, Mandatory = true)]
         public string Content {
             get { return ContentInternal; }
             set { ContentInternal = value; }
         }
 
-        [Parameter(Position = 2, ParameterSetName = "FromContent")]
+        [Parameter(Position = 2, ParameterSetName = "FromContent", Mandatory = true)]
         public string MimeType {
             get { return MimeTypeInternal; }
             set { MimeTypeInternal = value; }

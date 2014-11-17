@@ -17,7 +17,7 @@ namespace CmisCmdlets
     [Cmdlet(VerbsCommon.New, "CmisFolder")]
     public class NewCmisFolderCommand : CmisCommandBase
     {
-        [Parameter(ValueFromPipelineByPropertyName = true, Position = 0)]
+        [Parameter(ValueFromPipelineByPropertyName = true, Position = 0, Mandatory = true)]
         public string[] Path { get; set; }
 
         [Parameter(ValueFromPipelineByPropertyName = true)]

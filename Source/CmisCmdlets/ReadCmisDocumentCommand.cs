@@ -23,10 +23,10 @@ namespace CmisCmdlets
             SupportsShouldProcess = true)]
     public class ReadCmisDocumentCommand : CmisCommandBase
     {
-        [Parameter(Position = 0, ParameterSetName = "ByPath")]
+        [Parameter(Position = 0, ParameterSetName = "ByPath", Mandatory = true)]
         public string Path { get; set; }
 
-        [Parameter(Position = 0, ParameterSetName = "ByObject", ValueFromPipeline = true)]
+        [Parameter(Position = 0, ParameterSetName = "ByObject", ValueFromPipeline = true, Mandatory = true)]
         [Alias("Object")]
         public IDocument Document { get; set; }
 
